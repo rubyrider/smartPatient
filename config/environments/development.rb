@@ -26,4 +26,9 @@ SmartPatient::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+
 end
+
+ENV['API_KEY'] = '44717812'     # replace with your OpenTok API key
+ENV['API_SECRET'] = '9c65ad8584f44b44b55f446c94ba5c436e995b3b'

@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: doctor_sessions
+#
+#  id            :integer          not null, primary key
+#  patient_id    :integer
+#  doctor_id     :integer
+#  session_key   :text
+#  is_valid      :boolean          default(TRUE)
+#  status        :string(255)      default("INITIALIZED")
+#  completed     :boolean
+#  start_time    :datetime
+#  end_time      :datetime
+#  created_at    :datetime
+#  updated_at    :datetime
+#  invitation_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  patient_id: MyString
+  doctor_id: 1
+  session_key: MyText
+  valid: false
+  status: MyString
+
+two:
+  patient_id: MyString
+  doctor_id: 1
+  session_key: MyText
+  valid: false
+  status: MyString

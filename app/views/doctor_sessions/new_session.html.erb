@@ -1,0 +1,14 @@
+<h2>Apply for online video counseling</h2>
+
+<%= simple_form_for(@invitation) do |f| %>
+
+    <div class="form-inputs">
+      <p>Select a doctor</p>
+      <%= f.select :doctor_id, Doctor.all.collect{|doc| [doc.professional_name, doc.id]} ,required: true, autofocus: true %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Apply Online" %>
+    </div>
+<% end %>

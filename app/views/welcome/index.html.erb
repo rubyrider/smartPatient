@@ -1,2 +1,35 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h3>Looking for a doctor?</h3>
+<div class="span8 well">
+<%= form_tag('/', method: :get) do %>
+    <%= label_tag 'Symptoms' %>
+    <%= text_field_tag :q %><br />
+    <%= label_tag 'Age' %>
+    <%= text_field_tag :age %><br />
+    <%= submit_tag 'Search' %>
+<% end %>
+</div>
+<br />
+<hr />
+<h4>Filter</h4>
+<%= form_tag('/', method: :get) do %>
+    <%= label_tag 'Search' %>
+    <%= text_field_tag :q %><br />
+    <%= submit_tag 'Search' %>
+<% end %>
+<p>Available Doctors</p>
+<table class="table table-bordered">
+  <tr>
+    <th>Title</th>
+    <th>Speciality</th>
+    <th>Experience</th>
+  </tr>
+
+<% @doctors.all.each do |doctor| %>
+   <tr>
+     <td><%= doctor.professional_name %></td>
+     <td><%= doctor.tag_line %></td>
+     <td><%= doctor.experience %></td>
+   </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,25 @@
+<h1>Listing invitations</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Doctor</th>
+      <th>Time</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invitations.each do |invitation| %>
+      <tr>
+       <td><%= invitation.doctor.professional_name %></td>
+       <td class="label label-warning">Today</td>
+       <td><%= link_to 'Counseling URL', live_session_path(i_id: invitation.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invitation', new_invitation_path %>
