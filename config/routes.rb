@@ -1,5 +1,6 @@
 SmartPatient::Application.routes.draw do
 
+  get "ajax/fetch_location"
   devise_for :users
   resources :doctors
   resources :invitations

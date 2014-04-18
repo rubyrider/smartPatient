@@ -1,0 +1,97 @@
+
+x = 1
+eval x
+eval('x')
+eval('x', 'y'))
+eval('x', 'y')
+eval('x', &block))
+eval('x', &block)
+eval('x', "Hello world")
+Form
+Regexp
+Regexp.respond_to?(last_match)
+Regexp.respond_to?(:last_match)
+Regexp.last_match
+Regexp.last_match[:state]
+Regexp.last_match['hello']
+Regexp.last_match[/ (?<state>[A-Z]{2}) \d{5}$/]
+File
+File.make_dir
+File.makedir_p
+File.makedir
+FileUtil
+FileUtils
+File.methods
+File.methods.grep('dir')
+File.methods.grep('m')
+File.methods.grep(/\m/)
+Dir
+Dir.mkdir
+require Math
+PI
+$~
+x = -1
+x.round
+x.abs
+x.floor
+x.ceil
+x.truncate
+a[-4] = 4
+a = [12,3,5]
+a[-3] = 4
+a[-2]
+a[-1]
+a = {a:b}
+a = {a: 1}
+b = {a: 1}
+a === b
+a.eql?b
+puts "total #{count +=1} item#(count > 1 ? 's' : '')"
+puts "total #{count +=1} item #{count > 1 ? 's' : ''}"
+count = 1
+puts "total #{count +=1} item#{count > 1 ? 's' : ''}"
+include Math
+Math::G
+sleep Math::G
+10.upto
+10.times
+0.upto 10
+a =0.upto 10
+eval a
+eval "a"
+Net::HTTP.get_print target 
+a = [1,2]
+a[2]
+require 'net/http'
+require 'uri'
+lang = 'python'
+code = 'print "Hello World"'
+request = Net::HTTP.post_form(URI.parse('http://pygments.appspot.com/'), {'lang'=>lang, 'code'=>code})
+puts request.body
+a = /download/i/
+a = Regexp.new('/download/i/')
+a = Regexp.new('download',i)
+a = Regexp.new('download','i')
+i = "DownloadString"
+i.match(a)
+i.match(/download/i)
+a = Thread.new { print "a"; sleep(10); print "b"; print "c" }
+x = Thread.new { print "x"; Thread.pass; print "y"; print "z" }
+x.join # Let x thread finish, a will be killed on exit.
+puts "Waiting" until y.join(0.15)
+y = Thread.new { 4.times { sleep 0.1; puts 'tick... ' }}
+a[:a] = {puts "hello"}
+a[:a] = "hello"
+a = Thread.current
+a[:a]
+a.keys
+exit
+a = lambda {|camera| puts camera }
+a('fujifilm').call
+a.call('fujifilm')
+a = lambda { self.call }
+a = lambda { puts 'hello'; self.call }
+a
+a.call
+a = lambda { puts 'hello' }
+a = lambda { puts 'hello' }.call

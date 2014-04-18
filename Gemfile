@@ -38,5 +38,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 
 gem 'annotate'
-gem 'pg'
+gem 'gmaps4rails'
+gem "geocoder"
+gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
+gem 'underscore-rails'
+
 

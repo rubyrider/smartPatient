@@ -22,3 +22,5 @@ module SmartPatient
     config.action_controller.permit_all_parameters = true
   end
 end
+
+SP = YAML.load_file('config/sp.yml')[Rails.env.to_s]

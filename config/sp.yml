@@ -1,0 +1,23 @@
+development:
+  map:
+    id: 587005546263.apps.googleusercontent.com
+    secret: PHGL92sW-8UQT_tSrFR60J0h
+    email_address: 587005546263@developer.gserviceaccount.com
+    redirect_uri: http://localhost:3000/oauth2callback
+    origins: http://localhost:3000
+
+  tokbox: &tokbox
+    api_key: 44717812
+    api_secret: 9c65ad8584f44b44b55f446c94ba5c436e995b3b
+
+production:
+  map:
+    id: 587005546263.apps.googleusercontent.com
+    secret: PHGL92sW-8UQT_tSrFR60J0h
+    email_address: 587005546263@developer.gserviceaccount.com
+    redirect_uri: http://localhost:3000/oauth2callback
+    origins: http://localhost:3000
+
+  tokbox:
+    <<: *tokbox
+
