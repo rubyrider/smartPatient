@@ -12,3 +12,5 @@
  *= require_tree .
  */
 p.alert { display: none }
+.clear1{clear: both !important; height: 10px;}
+

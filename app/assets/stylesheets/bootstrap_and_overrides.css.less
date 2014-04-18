@@ -11,6 +11,15 @@
 @fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
 @fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
 @fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+@navbarBackground: #73c4ff;
+@navbarBackgroundHighlight: #73c4ff;
+@navbarHeight: 80px;
+@navbarLinkBackgroundActive: #fff;
+@navbarText: #fff;
+@navbarLinkColor: #fff;
+@navbarBrandColor: #000;
+@colorOrange: #f7c371;
+@gridColumns: 14;
 
 // Font Awesome
 @import "fontawesome/font-awesome";
@@ -28,3 +37,18 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+a.brand:hover {
+  background-color: @navbarBackground;
+  color: @navbarLinkColor;
+}
+
+a.brand {
+  color: #fff !important;
+  font-size: 40px !important;
+}
+
+body {
+  background-color: #f4f4f4 !important;
+}
+

@@ -1,6 +1,6 @@
 class DoctorSessionsController < ApplicationController
 
-  before_filter :config_open_tok
+  before_filter :config_open_tok, :authenticate_user!
 
   def new_session
     @invitation = Invitation.new

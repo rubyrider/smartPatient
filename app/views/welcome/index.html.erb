@@ -1,20 +1,9 @@
 <h3>Looking for a doctor?</h3>
-<div class="span8 well">
+<div class="clear1"></div>
 <%= form_tag('/', method: :get) do %>
-    <%= label_tag 'Symptoms' %>
-    <%= text_field_tag :q %><br />
-    <%= label_tag 'Age' %>
-    <%= text_field_tag :age %><br />
-    <%= submit_tag 'Search' %>
-<% end %>
-</div>
-<br />
-<hr />
-<h4>Filter</h4>
-<%= form_tag('/', method: :get) do %>
-    <%= label_tag 'Search' %>
-    <%= text_field_tag :q %><br />
-    <%= submit_tag 'Search' %>
+    <%= text_field_tag :symptoms, '' ,placeholder: "Symptoms" %>
+    <%= text_field_tag :speciality, '' ,placeholder: "Speciality" %>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
 <% end %>
 <p>Available Doctors</p>
 <table class="table table-bordered">

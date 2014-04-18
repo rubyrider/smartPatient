@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140403042850) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "doctor_sessions", force: true do |t|
     t.integer  "patient_id"
     t.integer  "doctor_id"
