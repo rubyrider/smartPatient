@@ -13,6 +13,7 @@ development:
 production:
   map:
     id: 587005546263.apps.googleusercontent.com
+    api_key: AIzaSyBFqvZUMXO3c2dl2uzdOKGTe9JelQjz5y4
     secret: PHGL92sW-8UQT_tSrFR60J0h
     email_address: 587005546263@developer.gserviceaccount.com
     redirect_uri: http://localhost:3000/oauth2callback
