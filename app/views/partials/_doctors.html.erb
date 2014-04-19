@@ -5,14 +5,10 @@
     <%= simple_form_for(Invitation.new) do |f| %>
 
         <div class="form-inputs">
-          <p>Select a doctor</p>
           <%= f.hidden_field :doctor_id, value: doctor.id, required: true, autofocus: true %>
           <%= f.hidden_field :user_id, value: current_user.try(:id) %>
         </div>
-
-        <div class="form-actions">
-          <%= f.submit ask_for_counseling(doctor) %>
-        </div>
+          <%= f.submit ask_for_counseling(doctor), class: "btn #{counseling_btn(doctor)}" %>
     <% end %>
     <br />
 <% end %>

@@ -2,17 +2,26 @@
 #
 # Table name: doctors
 #
-#  id              :integer          not null, primary key
-#  name            :string(255)
-#  title           :string(255)
-#  experience      :string(255)
-#  active          :boolean          default(TRUE)
-#  doc_code        :string(255)
-#  password_digest :string(255)
-#  age             :string(255)
-#  tag_line        :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id                    :integer          not null, primary key
+#  name                  :string(255)
+#  title                 :string(255)
+#  experience            :string(255)
+#  active                :boolean          default(TRUE)
+#  doc_code              :string(255)
+#  password_digest       :string(255)
+#  age                   :string(255)
+#  tag_line              :string(255)
+#  created_at            :datetime
+#  updated_at            :datetime
+#  online                :boolean
+#  latitude              :decimal(10, 6)
+#  longitude             :decimal(10, 6)
+#  street_address        :string(255)
+#  city                  :string(255)
+#  state                 :string(255)
+#  country               :string(255)
+#  counseling_hour_start :time
+#  counseling_hour_end   :time
 #
 
 class Doctor < ActiveRecord::Base

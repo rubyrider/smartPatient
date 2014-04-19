@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419135959) do
+ActiveRecord::Schema.define(version: 20140419143152) do
 
   create_table "doctor_sessions", force: true do |t|
     t.integer  "patient_id"
@@ -63,6 +63,32 @@ ActiveRecord::Schema.define(version: 20140419135959) do
 
   add_index "invitations", ["doctor_id"], name: "index_invitations_on_doctor_id", using: :btree
   add_index "invitations", ["user_id"], name: "index_invitations_on_user_id", using: :btree
+
+  create_table "review_abilities", force: true do |t|
+    t.string   "doctor_id"
+    t.string   "user_id"
+    t.boolean  "reviewed",   default: false
+    t.datetime "expire_at",  default: '2014-05-04 14:33:36'
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "review_abilities", ["doctor_id"], name: "index_review_abilities_on_doctor_id", using: :btree
+  add_index "review_abilities", ["user_id"], name: "index_review_abilities_on_user_id", using: :btree
+
+  create_table "reviews", force: true do |t|
+    t.string   "user_id"
+    t.string   "doctor_id"
+    t.string   "point"
+    t.integer  "review_ability_id"
+    t.boolean  "can_edit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["doctor_id"], name: "index_reviews_on_doctor_id", using: :btree
+  add_index "reviews", ["point"], name: "index_reviews_on_point", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

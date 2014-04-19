@@ -1,5 +1,6 @@
 SmartPatient::Application.routes.draw do
 
+  get "search/doctors"
   get "ajax/fetch_location"
   get "ajax/set_current_position"
   get "ajax/update_doctors_data"

@@ -1,9 +1,3 @@
-$(function(){
-
-    initialize_geo_mock_up();
-    navigator.geolocation.getCurrentPosition(success_callback, error_callback)
-})
-
 function initialize_geo_mock_up(){
     navigator.geolocation.waypoints = [
         {

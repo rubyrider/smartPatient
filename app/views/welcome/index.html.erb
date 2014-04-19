@@ -7,3 +7,11 @@
 <% end %>
 <%= render template: 'modals/suggestions' %>
 
+<script type="text/javascript">
+    $(function(){
+
+        initialize_geo_mock_up();
+        navigator.geolocation.getCurrentPosition(success_callback, error_callback)
+    })
+</script>
+

@@ -45,3 +45,9 @@ gem 'underscore-rails'
 gem 'bootstrap-modal-rails'
 
 
+# realtime
+gem 'faye'
+gem 'thin'
+gem 'eventmachine'
+
+
