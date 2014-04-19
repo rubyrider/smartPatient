@@ -9,8 +9,23 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *=require bootstrap-modal
  *= require_tree .
  */
 p.alert { display: none }
 .clear1{clear: both !important; height: 10px;}
+
+/*!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Boostrap 3 patch for for bootstrap-modal. Include BEFORE bootstrap-modal.css!
+ */
+
+#full-width {
+    margin-top: 100px !important;
+}
 

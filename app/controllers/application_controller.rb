@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
 
   before_action :configure_devise_permitted_parameters, if: :devise_controller?
+  helper_method :current_position
+  helper_method :current_position=
 
   protected
 
@@ -20,5 +22,16 @@ class ApplicationController < ActionController::Base
       }
     end
   end
+
+  def current_position=(lat, lng)
+    session[:lat], session[:lng] = lat, lng
+  end
+
+
+  def current_position
+    return [] if current_user.nil?
+    [session[:lat], session[:lng]]
+  end
+
 
 end

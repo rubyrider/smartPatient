@@ -42,5 +42,6 @@ gem 'gmaps4rails'
 gem "geocoder"
 gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 gem 'underscore-rails'
+gem 'bootstrap-modal-rails'
 
 

@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
   def index
     search = params[:q]
-    case search.nil?
-      when true
-        @doctors = Doctor.all
-      when false
-        @doctors = Doctor.where("tag_line LIKE ? OR title LIKE ? OR age LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    @doctors = Doctor.near current_position, 5
+    @hash = Gmaps4rails.build_markers(@doctors) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
     end
+
   end
 end

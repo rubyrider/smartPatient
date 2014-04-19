@@ -8,8 +8,8 @@ function initialize_geo_mock_up(){
     navigator.geolocation.waypoints = [
         {
             coords: {
-                latitude: 23.7464653,
-                longitude: 90.3760125,
+                latitude: 23.7457274,
+                longitude: 90.3857325,
                 accuracy: 1500
             }
         }, {
@@ -73,7 +73,7 @@ function initialize_geo_mock_up(){
 
 function success_callback(p)
 {
-    set_map(p.coords.latitude, p.coords.longitude)
+    refresh_doctors_list(p)
 }
 
 function error_callback(p)
@@ -81,47 +81,18 @@ function error_callback(p)
     alert('error='+p.message);
 }
 
-function set_map(lat, lng){
-    handler = Gmaps.build('Google');
-    get_more_location().success(function(data){
-        $.each(data, function(index, o){
-            var coord = {}
-            coord["lat"] = o.lat
-            coord["lng"] = o.lng
 
-            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-                markers = handler.addMarkers([
-                    {
-                        "lat": o.lat,
-                        "lng": o.lng
-                    }
-                ]);
-
-                handler.bounds.extendWith(markers);
-                handler.fitMapToBounds();
-            });
-
-        })
-    })
-
-
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers([
-            {
-                "lat": lat,
-                "lng": lng
-            }
-        ]);
-
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-    });
-
-    handler.getMap().setZoom(16);
-}
 
 function get_more_location(){
     return $.getJSON("ajax/fetch_location.json", function(data){})
 
+}
+
+function refresh_doctors_list(p){
+    $.ajax({url: 'ajax/update_doctors_data', data: {lat: p.coords.latitude, lng: p.coords.longitude}})
+}
+
+function refresh_current_position(p){
+   return $.ajax({url: 'ajax/set_current_position', data: {lat: p.coords.latitude, lng: p.coords.longitude}})
 }
 

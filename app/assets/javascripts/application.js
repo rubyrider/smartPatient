@@ -15,4 +15,6 @@
 //= require twitter/bootstrap
 //= require underscore
 //= require gmaps/google
+//= require bootstrap-modal
+//= require bootstrap-modalmanager
 //= require_tree .

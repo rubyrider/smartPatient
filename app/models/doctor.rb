@@ -28,10 +28,16 @@ class Doctor < ActiveRecord::Base
   geocoded_by :street_address   # can also be an IP address
   after_validation :geocode
 
+  #reverse_geocoded_by :latitude, :longitude
+  #after_validation :reverse_geocode
+
   def professional_name
     "#{title.humanize} #{name}"
   end
 
+  def available_now?
+    online || false
+  end
 
 
 end

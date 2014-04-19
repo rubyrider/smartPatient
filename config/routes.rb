@@ -1,6 +1,8 @@
 SmartPatient::Application.routes.draw do
 
   get "ajax/fetch_location"
+  get "ajax/set_current_position"
+  get "ajax/update_doctors_data"
   devise_for :users
   resources :doctors
   resources :invitations
@@ -12,5 +14,10 @@ SmartPatient::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  controller :modals do
+       get '/suggestions' => :suggestions
+  end
+
 
 end

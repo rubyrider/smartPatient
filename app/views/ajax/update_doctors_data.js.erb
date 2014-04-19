@@ -1,0 +1,23 @@
+$("#doctors").html("<%= j render 'partials/doctors', doctors: @doctors, hash: @hash %>")
+
+var $modal = $('#ajax-modal');
+
+$('body').modalmanager('loading');
+
+$("#modal-btn").trigger('click')
+
+$("#title").html("<%= @doctors.size %> doctors are available near by you!")
+
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    console.log('<%=raw @hash.to_json %>')
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(13);
+    handler.getMap().setCenter(new google.maps.LatLng(<%= params[:lat].to_f %>, <%= params[:lng].to_f %>));
+});
+
+
+
+

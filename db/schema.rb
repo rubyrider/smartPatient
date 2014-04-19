@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418121412) do
+ActiveRecord::Schema.define(version: 20140419135959) do
 
   create_table "doctor_sessions", force: true do |t|
     t.integer  "patient_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140418121412) do
     t.string   "name"
     t.string   "title"
     t.string   "experience"
-    t.boolean  "active",                                   default: true
+    t.boolean  "active",                                         default: true
     t.string   "doc_code"
     t.string   "password_digest"
     t.string   "age"
@@ -43,12 +43,14 @@ ActiveRecord::Schema.define(version: 20140418121412) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "online"
-    t.decimal  "latitude",        precision: 10, scale: 6
-    t.decimal  "longitude",       precision: 10, scale: 6
+    t.decimal  "latitude",              precision: 10, scale: 6
+    t.decimal  "longitude",             precision: 10, scale: 6
     t.string   "street_address"
     t.string   "city"
     t.string   "state"
     t.string   "country"
+    t.time     "counseling_hour_start"
+    t.time     "counseling_hour_end"
   end
 
   create_table "invitations", force: true do |t|

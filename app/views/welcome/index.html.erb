@@ -1,8 +1,3 @@
-<div style='width: 800px;'>
-  <div id="map" class="span12" style='height: 400px;'>
-
-  </div>
-</div>
 <h3>Looking for a doctor?</h3>
 <div class="clear1"></div>
 <%= form_tag('/', method: :get) do %>
@@ -10,20 +5,5 @@
     <%= text_field_tag :speciality, '' ,placeholder: "Speciality" %>
     <%= submit_tag 'Search', class: 'btn btn-primary' %>
 <% end %>
-<p>Available Doctors</p>
-<table class="table table-bordered">
-  <tr>
-    <th>Title</th>
-    <th>Speciality</th>
-    <th>Experience</th>
-  </tr>
-
-<% @doctors.all.each do |doctor| %>
-   <tr>
-     <td><%= doctor.professional_name %></td>
-     <td><%= doctor.tag_line %></td>
-     <td><%= doctor.experience %></td>
-   </tr>
-<% end %>
-</table>
+<%= render template: 'modals/suggestions' %>
 

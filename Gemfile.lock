@@ -40,6 +40,8 @@ GEM
     atomic (1.1.16)
     bcrypt (3.1.7)
     bcrypt-ruby (3.0.1)
+    bootstrap-modal-rails (2.2.4)
+      railties (>= 3.1)
     builder (3.1.4)
     callsite (0.0.11)
     cancan (1.6.10)
@@ -220,6 +222,7 @@ DEPENDENCIES
   activerecord-reputation-system!
   annotate
   bcrypt-ruby (~> 3.0.0)
+  bootstrap-modal-rails
   cancan
   coffee-rails (~> 4.0.0)
   devise
