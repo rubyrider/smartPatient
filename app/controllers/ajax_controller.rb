@@ -7,7 +7,7 @@ class AjaxController < ApplicationController
   def update_doctors_data
      distance = params[:d] || 3
      coords = [params[:lat].to_f, params[:lng].to_f]
-     @doctors = Doctor.near(coords, distance)
+     @doctors = Doctor.near(coords, distance).order("online DESC")
      @hash = Gmaps4rails.build_markers(@doctors) do |user, marker|
        marker.lat user.latitude.to_s
        marker.lng user.longitude.to_s

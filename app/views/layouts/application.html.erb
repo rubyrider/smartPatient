@@ -56,7 +56,6 @@
               <li><%= link_to "Live Counseling", :new_doctors_session  %></li>
               <li><%= link_to "Search For Doctor", "#"  %></li>
               <% if current_user %>
-                  <li><%= link_to "Your Appointments", "/invitations" %></li>
                   <li><%= link_to "Sign Out", "/users/sign_out", method: :delete  %></li>
             <% else %>
               <li><%= link_to "Registration", "/users/sign_up"  %></li>
